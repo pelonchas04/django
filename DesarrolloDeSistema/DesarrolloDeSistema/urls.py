@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from DesarrolloDeSistema.views import mostrar,parametro
+from DesarrolloDeSistema.views import mostrar,parametro, plantillas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vista1/', mostrar),
     path('edades/<int:edad>', parametro),
+    path('HT/', plantillas),
 ]
