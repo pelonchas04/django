@@ -9,6 +9,14 @@
     <h1>Hola ninos</h1>
     <p style="color: red;">El nombre del alumno es {{nombre_del_profesor}} {{apellido_del_profesor}}</p>
     <br>
-    <p>Este programa se inicio el {{fecha_actual}}</p>
+    <p>Este programa se inicio el {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
+    <br>
+    <p>El profesor {{apellido_del_profesor}} puede dar las clases de:</p>
+    <p>
+        {% for un_tema in materias %}
+            <p>{{un_tema}}</p> 
+
+        {% endfor %}
+    </p>
 </body>
 </html>
