@@ -12,11 +12,21 @@
     <p>Este programa se inicio el {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
     <br>
     <p>El profesor {{apellido_del_profesor}} puede dar las clases de:</p>
-    <p>
-        {% for un_tema in materias %}
-            <p>{{un_tema}}</p> 
+    <p> 
+        <!-- el siclo "for", en este caso, se ustiliza como un ciclo foreach.-->
+        {% if materias %}  <!--django mira si la variable existe y si es asi verifica si tiene informacion, en caso de tenerla se ejecuta-->
+        
+            <ol>
+            {% for un_tema in materias %}
+                <li>{{un_tema}}</li> 
 
-        {% endfor %}
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>Este profesor no tiene clases disponibles.</p>
+        {% endif %}
+
+        
     </p>
 </body>
 </html>
