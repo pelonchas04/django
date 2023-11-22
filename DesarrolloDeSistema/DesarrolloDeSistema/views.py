@@ -13,7 +13,7 @@ def plantillas(request):   # funcion que llama a plantillas (no es la más optim
 
     fecha_del_dia_de_hoy = date.today()
 
-    materias = []
+    materias = ["Matematicas", "Ciencias Narurales", "Ciencias Sociales"]
 
     doc_externo = open("C:/Documentos/DESSARROLLO DE SOFTWARE/django/pruebas django y github/DesarrolloDeSistema/plantillas/index.html") # abrimos el documento html para esta funcion
 
