@@ -1,6 +1,6 @@
 # funciones a mostrar
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import Template, Context, loader
 from datetime import date
 
 def mostrar(request):
@@ -21,9 +21,21 @@ def plantillas(request):   # funcion que llama a plantillas (no es la más optim
 
     doc_externo.close()  # cerramos el html porque ya esta guardado
 
+
     contexto = Context({"nombre_del_profesor": "Mario", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias})  # por ahora no sirve ya que el html es simple
 
     documento = plantilla.render(contexto)  # le pasamos los cambios que realiza python sobre html
 
     return HttpResponse(documento)  # mostamos la plantilla 
+
+def Plantillas_cargadores(request): # funcion que llama plantillas (optima y con cargadores)
+    fecha_del_dia_de_hoy = date.today()
+
+    materias = ["Fisica", "Quimica", "Programacion"]
+
+    doc_externo = loader.get_template("index.html")
+
+    documento = doc_externo.render({"nombre_del_profesor": "Mario", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias})
+
+    return HttpResponse(documento)
 

@@ -5,30 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<style>
     </style>-->
+    <link rel="stylesheet" href="estilos.css">
     <title>Pruebas django</title>
 </head>
 <body>
-    <h1>Hola ninos</h1>
+    <h1>Bienvenidos a la esculita semillitas</h1>
     <p style="color: red;">El nombre del alumno es {{nombre_del_profesor}} {{apellido_del_profesor}}</p>
-    <br>
+    <br>                            <!--el simbolo "|" me permite usar diferentes filtros.-->
     <p>Este programa se inicio el {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
     <br>
     <p> 
-        <!-- el siclo "for", en este caso, se ustiliza como un ciclo foreach.-->
-        {% if materias %}  <!--django mira si la variable existe y si es asi verifica si tiene informacion, en caso de tenerla se ejecuta-->
+        {% if materias %}  <!--django mira si la variable existe y si es asi verifica si tiene informacion, en caso de tenerla se ejecuta tambien es posible utilizar simbolos de condicionales dentro de los if, elif, etc-->
             
             <p>El profesor {{apellido_del_profesor}} puede dar las clases de:</p>
             <ol>
+            <!-- el siclo "for", en este caso, se ustiliza como un ciclo foreach.-->
             {% for un_tema in materias %}
-                <li>{{un_tema}}</li> 
+                <li>{{un_tema|first|upper}}</li> 
 
             {% endfor %}
             </ol>
         {% else %}
             <p>Este profesor no tiene clases disponibles.</p>
         {% endif %}
-
-        
     </p>
 </body>
 </html>

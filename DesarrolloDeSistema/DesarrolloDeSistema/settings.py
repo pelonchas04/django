@@ -54,7 +54,7 @@ ROOT_URLCONF = 'DesarrolloDeSistema.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Documentos/DESSARROLLO DE SOFTWARE/django/pruebas django y github/DesarrolloDeSistema/plantillas"],# ingresamos la ubicacion de las plantillas que se van a usar
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
