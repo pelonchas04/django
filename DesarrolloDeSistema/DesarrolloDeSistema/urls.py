@@ -21,7 +21,7 @@ from DesarrolloDeSistema.views import mostrar,parametro, plantillas, Plantillas_
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vista1/', mostrar),
-    path('edades/<int:edad>', parametro),
+    path('edades/<int:edad>', parametro), # indicamos cual es el tipo de parametro que se usa
     path('HT/', plantillas),
     path("carga/", Plantillas_cargadores),
 ]
