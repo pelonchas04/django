@@ -46,8 +46,4 @@ def Plantillas_cargadores_2(request): # funcion que llama plantillas (optima y c
 
     materias = ["Fisica", "Quimica", "Programacion"]
 
-    #doc_externo = get_template("index.html")
-
-    #documento = doc_externo.render({"nombre_del_profesor": "Mario", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias})
-
-    return HttpResponse(render(request, "index.html", {"nombre_del_profesor": "Estuardo", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias}))
+    return HttpResponse(render(request, "index.html", {"nombre_del_profesor": "Estuardo", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias})) # el modulo shortcuts nos ayuda a eliminar más lines de codigo

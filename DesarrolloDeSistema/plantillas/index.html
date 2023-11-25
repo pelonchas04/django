@@ -16,6 +16,9 @@
     <title>Pruebas django</title>
 </head>
 <body>
+    {%include "manu_superior/manu.html"%} <!--Es utilizado para inplementar una plantilla sobre otra plantilla-->
+
+
     <h1>Bienvenidos a la esculita semillitas</h1>
     <p style="color: red;">El nombre del alumno es {{nombre_del_profesor}} {{apellido_del_profesor}}</p>
     <br>                            <!--el simbolo "|" me permite usar diferentes filtros.-->
