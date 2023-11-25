@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from DesarrolloDeSistema.views import mostrar,parametro, plantillas, Plantillas_cargadores
+from DesarrolloDeSistema.views import mostrar,parametro, plantillas, Plantillas_cargadores, Plantillas_cargadores_2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('edades/<int:edad>', parametro), # indicamos cual es el tipo de parametro que se usa
     path('HT/', plantillas),
     path("carga/", Plantillas_cargadores),
+    path("Numero_2/", Plantillas_cargadores_2),
 ]

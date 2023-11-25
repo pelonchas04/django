@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 from datetime import date
 
 def mostrar(request):
@@ -29,7 +30,7 @@ def plantillas(request):   # funcion que llama a plantillas (no es la más optim
 
     return HttpResponse(documento)  # mostamos la plantilla 
 
-def Plantillas_cargadores(request): # funcion que llama plantillas (optima y con cargadores)
+def Plantillas_cargadores(request): # funcion que llama plantillas (optima y con cargadores #1)
     fecha_del_dia_de_hoy = date.today()
 
     materias = ["Fisica", "Quimica", "Programacion"]
@@ -40,3 +41,13 @@ def Plantillas_cargadores(request): # funcion que llama plantillas (optima y con
 
     return HttpResponse(documento)
 
+def Plantillas_cargadores_2(request): # funcion que llama plantillas (optima y con cargadores #2
+    fecha_del_dia_de_hoy = date.today()
+
+    materias = ["Fisica", "Quimica", "Programacion"]
+
+    #doc_externo = get_template("index.html")
+
+    #documento = doc_externo.render({"nombre_del_profesor": "Mario", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias})
+
+    return HttpResponse(render(request, "index.html", {"nombre_del_profesor": "Estuardo", "apellido_del_profesor": "Enriquez", "fecha_actual": fecha_del_dia_de_hoy, "materias": materias}))
