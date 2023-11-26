@@ -1,0 +1,23 @@
+<!--Plantilla padre para el resto de plantillas de una pagina-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title%}  
+        {% endblock %} 
+    </title>
+</head>
+<body>
+    <h1>Escuela</h1> <!--Todo el codigo que haya dentro de esta plantilla y fuera de los bloques cambiantes se heredara a todasl las plantillas hijas-->
+    <h3>Eseñanza de nivel medio</h3>
+    {%include "manu_superior/manu.html"%} 
+    {% block content %} <!--Este llamado indica las partes de codigo que pueden ser modificadas en las plantillas hijas-->
+
+    {% endblock %} <!--Y de esta manera se cierran las partes cambiantes-->
+
+    <p>Gracias por su visita</p>
+</body>
+</html>
